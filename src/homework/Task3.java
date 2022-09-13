@@ -3,20 +3,20 @@ package homework;
 public class Task3 {
 
     public static boolean fuzzySearch(String template, String fuzzy) {
+        boolean rsl = false;
         StringBuilder builder = new StringBuilder();
         int indexCharAtFuzzy = 0;
 
-        for (int i = 0; i < template.length() && fuzzy.length() >= template.length(); i++) {
-            for (int j = indexCharAtFuzzy; j < fuzzy.length(); j++) {
-                if (template.charAt(i) == fuzzy.charAt(j)) {
-                    builder.append(template.charAt(i));
-                    indexCharAtFuzzy++;
+        for (int i = 0; i < fuzzy.length() && fuzzy.length() >= template.length(); i++) {
+            if (template.charAt(indexCharAtFuzzy) == fuzzy.charAt(i)) {
+                builder.append(template.charAt(indexCharAtFuzzy++));
+                if (builder.toString().equals(template)) {
+                    rsl = true;
                     break;
                 }
-                indexCharAtFuzzy++;
             }
         }
-        return builder.toString().equals(template);
+        return rsl;
     }
 
     public static void main(String[] args) {

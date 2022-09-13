@@ -5,24 +5,26 @@ import java.util.Arrays;
 public class Task2 {
 
     public static int[] sum(int[] numbers, int sum) {
+        Arrays.sort(numbers);
         int[] rsl = new int[2];
+        int first = 0;
+        int second = numbers.length - 1;
 
-        for (int number : numbers) {
-            for (int i : numbers) {
-                if (number + i == sum) {
-                    rsl[0] = i;
-                    rsl[1] = number;
-                    break;
-                }
+        while (first < second) {
+            int s = numbers[first] + numbers[second];
+            if (s == sum) {
+                rsl[0] = numbers[first];
+                rsl[1] = numbers[second];
+                break;
+            } else {
+                if (s < sum) first++;
+                else second--;
             }
         }
         return rsl;
     }
 
-
     public static void main(String[] args) {
-        int[] rsl = sum(new int[]{3, 4, 2, 7}, 10);
-
-        System.out.println(Arrays.toString(rsl));
+        System.out.println(Arrays.toString(sum(new int[]{4, 0, 4, 7, 6, 8, 9}, 10)));
     }
 }
