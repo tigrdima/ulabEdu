@@ -25,6 +25,6 @@ public class Task2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(sum(new int[]{4, 0, 4, 7, 6, 8, 9}, 10)));
+        System.out.println(Arrays.toString(sum(new int[]{0, 4, 7, 6, 8, 9}, 10)));
     }
 }
