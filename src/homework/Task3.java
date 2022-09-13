@@ -20,7 +20,7 @@ public class Task3 {
     }
 
     public static void main(String[] args) {
-        System.out.println(fuzzySearch("ddddddddddddddd", "ddddddd"));
+        System.out.println(fuzzySearch("dddddddddddddd", "ddddddd"));
         System.out.println(fuzzySearch("car", "ca6$$#_rtwheel"));
         System.out.println(fuzzySearch("cwhl", "cartwheel"));
         System.out.println(fuzzySearch("cwhee", "cartwheel"));
